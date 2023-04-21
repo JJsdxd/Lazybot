@@ -9,7 +9,8 @@ import javax.security.auth.login.LoginException;
 
 public class Lazybot {
     public static void main(String[] args) throws LoginException {
-        JDABuilder jdaBuilder=JDABuilder.createDefault("MTA5NzA2MjUyODUzOTk2MzQ0Mw.GUYeKf.905FysuoJGhqfZlBNXGpJc-S4hHBDFJoD0kLto");
+        String BOT_token = System.getenv("BOT_TOKEN");
+        JDABuilder jdaBuilder=JDABuilder.createDefault(BOT_token);
 
         JDA jda= jdaBuilder
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT,GatewayIntent.GUILD_MESSAGES)
